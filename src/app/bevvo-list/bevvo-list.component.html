@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor='let bevvo of childBevvoList'>{{bevvo.name}}
+    <ul>
+      <li *ngFor='let ingredient of bevvo.ingredients()'>{{ingredient}}</li>
+    </ul>
+    <button (click)="serveBevvo(bevvo)">Order this bevvo</button>
+  </li>
+</ul>

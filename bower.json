@@ -1,0 +1,26 @@
+{
+  "name": "komboozecha",
+  "description": "a very good app for mixing rotten grain juices",
+  "main": "",
+  "authors": [
+    "Keith Evans and Brynna Klamkin-McCarter"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "kombucha",
+    "booze",
+    "drink",
+    "regret"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
