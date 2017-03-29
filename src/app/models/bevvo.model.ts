@@ -1,5 +1,5 @@
 export class Bevvo {
-  constructor(public name: string, public size: number, public ratio: Object) {
+  constructor(public name: string, public ratio: Object) {
   }
 
   ingredients() {
@@ -10,12 +10,11 @@ export class Bevvo {
     return ingredients;
   }
 
-  serve() {
+  serve(size) {
     let servings = {};
     let ratio = this.ratio;
-    let size = this.size;
     Object.keys(ratio).forEach(function(key) {
-      servings[key] = ratio[key] * size;
+      servings[key] = Math.ceil(ratio[key] * size);
     });
     return servings;
   }

@@ -1,4 +1,4 @@
 <bevvo-list *ngIf="!adminView" [childBevvoList]="masterBevvoList" (bevvoServer)="adjustInventory($event)"></bevvo-list>
 <keg-list *ngIf="adminView" [childKegList]="masterKegList"></keg-list>
-<button *ngIf="!adminView" (click)="viewToggle()">View Inventory</button>
-<button *ngIf="adminView" (click)="viewToggle()">View Menu</button>
+<button class="btn" *ngIf="!adminView" (click)="viewToggle()">View Inventory</button>
+<button class="btn" *ngIf="adminView" (click)="viewToggle()">View Menu</button>

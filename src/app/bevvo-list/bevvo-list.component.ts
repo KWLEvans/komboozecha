@@ -11,9 +11,8 @@ export class BevvoListComponent {
   @Input() childBevvoList: Bevvo[];
   @Output() bevvoServer = new EventEmitter;
 
-  serveBevvo(bevvo) {
-    console.log(bevvo);
-    let servings = bevvo.serve();
+  serveBevvo(bevvo, size) {
+    let servings = bevvo.serve(size);
     this.bevvoServer.emit(servings);
   }
 }

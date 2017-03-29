@@ -29,10 +29,10 @@ export class AppComponent {
   }
 
   masterBevvoList: Bevvo[] = [
-    new Bevvo("10,000 Leagues", 20, {"Seaweed Kombucha": .6, "Radler": .2, "Saltwater": .2}),
-    new Bevvo("Bone Down", 36, {"Bone Broth": .3, "Cayenne Kombucha": .3, "Pimms": .2, "Saltwater": .2}),
-    new Bevvo("Coffin Robber", 8, {"Cayenne Kombucha": .2, "Absinthe Stout": .7, "Arsenic": .1}),
-    new Bevvo("King Kom", 100, {"Cayenne Kombucha": .1, "Banana Kombucha": .2, "Coconut Kombucha": .2, "Coffee Porter": .4, "Sweat": .1})
+    new Bevvo("10,000 Leagues", {"Seaweed Kombucha": .6, "Radler": .2, "Saltwater": .2}),
+    new Bevvo("Bone Down", {"Bone Broth": .3, "Cayenne Kombucha": .3, "Pimms": .2, "Saltwater": .2}),
+    new Bevvo("Coffin Robber", {"Cayenne Kombucha": .2, "Absinthe Stout": .7, "Arsenic": .1}),
+    new Bevvo("King Kom", {"Cayenne Kombucha": .1, "Banana Kombucha": .2, "Coconut Kombucha": .2, "Coffee Porter": .4, "Sweat": .1})
   ];
   masterKegList: Keg[] = [
     new Keg("Seaweed Kombucha", 1984, 1984),

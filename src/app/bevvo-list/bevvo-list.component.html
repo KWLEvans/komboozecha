@@ -3,6 +3,9 @@
     <ul>
       <li *ngFor='let ingredient of bevvo.ingredients()'>{{ingredient}}</li>
     </ul>
-    <button (click)="serveBevvo(bevvo)">Order this bevvo</button>
+    <button class="btn" value="8" (click)="serveBevvo(bevvo, $event.target.value)">8 ounces</button>
+    <button class="btn" value="12" (click)="serveBevvo(bevvo, $event.target.value)">12 ounces</button>
+    <button class="btn" value="16" (click)="serveBevvo(bevvo, $event.target.value)">16 ounces</button>
+    <button class="btn" value="36" (click)="serveBevvo(bevvo, $event.target.value)">36 ounces</button>
   </li>
 </ul>
