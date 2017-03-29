@@ -1,3 +1,5 @@
-<ul>
-  <li *ngFor="let keg of childKegList">{{keg.name}}: {{keg.currentAmount}}/{{keg.totalAmount}}</li>
-</ul>
+<div class="column-xs-4" *ngFor="let keg of childKegList">
+  <h3>{{keg.name}}</h3>
+  <!-- unique ids will come from firebase -->
+  <div [id]="keg.name" class="keg-display"></div>
+</div>

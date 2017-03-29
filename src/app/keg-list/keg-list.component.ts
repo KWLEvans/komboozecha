@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewChecked } from '@angular/core';
 import { Keg } from './../models/keg.model';
 
 @Component({
@@ -6,6 +6,17 @@ import { Keg } from './../models/keg.model';
   templateUrl: './keg-list.component.html',
   styleUrls: ['./keg-list.component.css']
 })
-export class KegListComponent {
+export class KegListComponent implements AfterViewChecked {
   @Input() childKegList: Keg[];
+
+  ngAfterViewChecked() {
+    let saltwater;
+    this.childKegList.forEach(function(keg) {
+      if (keg.name === "Saltwater") {
+        saltwater = keg;
+      }
+    });
+    console.log(saltwater);
+    document.getElementById("Saltwater").setAttribute("style", "background: linear-gradient(0deg, blue, blue " + saltwater.percent() + ", white " + saltwater.percent() + ")");
+  }
 }
