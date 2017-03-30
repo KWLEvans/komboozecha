@@ -1,5 +1,6 @@
-<div class="column-xs-4" *ngFor="let keg of childKegList">
+<div class="col-xs-4" *ngFor="let keg of kegs">
   <h3>{{keg.name}}</h3>
   <!-- unique ids will come from firebase -->
-  <div [id]="keg.name" class="keg-display"></div>
+  <div [id]="keg.color" class="keg-display"></div>
 </div>
+<new-keg></new-keg>

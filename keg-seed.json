@@ -1,0 +1,63 @@
+{
+  "kegs": [{
+    "name": "Seaweed Kombucha",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#105927"
+    }, {
+    "name": "Radler",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#db0852"
+    }, {
+    "name": "Saltwater",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#31e2d4"
+    }, {
+    "name": "Bone Broth",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#e8ce74"
+    }, {
+    "name": "Cayenne Kombucha",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#ce1616"
+    }, {
+    "name": "Pimms",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#913215"
+    }, {
+    "name": "Abisnthe Stout",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#4cba10"
+    }, {
+    "name": "Arsenic",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#64696d"
+    }, {
+    "name": "Banana Kombucha",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#e8d440"
+    }, {
+    "name": "Coconut Kombucha",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#49311c"
+    }, {
+    "name": "Coffee Porter",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#261203"
+    }, {
+    "name": "Sweat",
+    "totalAmount": 1984,
+    "currentAmount": 1984,
+    "color": "#dce27f"
+    }]
+}
