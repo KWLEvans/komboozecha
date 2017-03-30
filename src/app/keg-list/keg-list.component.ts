@@ -1,29 +1,36 @@
-import { Component, Input, AfterViewChecked } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterViewChecked } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Keg } from './../models/keg.model';
-import { NewKegComponent } from './../new-keg/new-keg.component';
 
 @Component({
   selector: 'keg-list',
   templateUrl: './keg-list.component.html',
   styleUrls: ['./keg-list.component.css']
 })
-export class KegListComponent {
-  @Input() kegs: FirebaseListObservable<any[]>;
+export class KegListComponent implements AfterViewChecked {
+  @Input() keg;
+  @Output() drainSender = new EventEmitter();
 
-  fillKeg(keg) {
-    document.getElementById(keg.color).setAttribute("style", "background: linear-gradient(0deg, " + keg.color +", " + keg.color + " " + this.percent(keg) + ", white " + this.percent(keg) + ")");
+  ngAfterViewChecked() {
+    this.fillKeg();
   }
 
-  percent(keg) {
-    let percent: string = ((keg.currentAmount/keg.totalAmount)*100).toString() + "%";
-    console.log(percent);
+  fillKeg() {
+    document.getElementById(this.keg.color).setAttribute("style", "background: linear-gradient(0deg, " + this.keg.color +", " + this.keg.color + " " + this.percent() + ", white " + this.percent() + ")");
+  }
+
+  percent() {
+    let percent: string = ((this.keg.currentAmount/this.keg.totalAmount)*100).toString() + "%";
     return percent;
   }
 
-  // ngAfterViewChecked() {
-  //     this.kegs.forEach(function(keg) {
-  //       this.fillKeg(keg);
-  //     });
-  // }
+  drain(amount: number) {
+    let quantity = this.keg.currentAmount - amount;
+    let params = {
+      "key": this.keg.$key,
+      "amount": quantity
+    }
+    this.drainSender.emit(params);
+  }
+
 }

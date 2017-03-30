@@ -14,3 +14,7 @@
 #main-header h1 {
   font-size: 90px;
 }
+
+.keg-div {
+  background-color: rgba(255, 255, 255, 0.2);
+}

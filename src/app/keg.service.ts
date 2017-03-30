@@ -7,7 +7,7 @@ export class KegService {
   kegs: FirebaseListObservable<any[]>;
 
   constructor(private angularFire: AngularFire) {
-    this.kegs = angularFire.database.list('kegs', { preserveSnapshot: true });
+    this.kegs = angularFire.database.list('kegs');
   }
 
   getKegs() {
@@ -22,19 +22,4 @@ export class KegService {
     return this.angularFire.database.object('/kegs/' + kegId);
   }
 
-  adjustInventory(servings) {
-    let that = this;
-    this.kegs.forEach(function(keg) {
-      keg.forEach(function(subkeg) {
-        let currentKeg = that.getKegById(subkeg.$key);
-        currentKeg.subscribe(snapshot => {
-          console.log(snapshot);
-        });
-        console.log(currentKeg);
-        // if(servings[currentKeg.name]) {
-        //   currentKeg.currentAmount -= servings[currentKeg.name];
-        // }
-      });
-    });
-  }
 }

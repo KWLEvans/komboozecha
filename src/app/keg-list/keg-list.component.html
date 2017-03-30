@@ -1,10 +1,11 @@
 <div class="keg-div">
-  <div class="col-xs-3" *ngFor="let keg of kegs">
+  <div class="col-xs-3">
     <h3>{{keg.name}}</h3>
     <!-- unique ids will come from firebase -->
     <div [id]="keg.color" class="keg-display"></div>
     <h4>{{keg.currentAmount}}/{{keg.totalAmount}}oz</h4>
+    <button class="btn" value="8" (click)="drain($event.target.value)">8oz</button>
+    <button class="btn" value="16" (click)="drain($event.target.value)">16oz</button>
+    <button class="btn" value="124" (click)="drain($event.target.value)">124oz</button>
   </div>
-  <br>
-  <new-keg id="new-keg-form"></new-keg>
 </div>

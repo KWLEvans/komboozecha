@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { BevvoListComponent } from './bevvo-list/bevvo-list.component';
-import { Bevvo } from './models/bevvo.model';
 import { Keg } from './models/keg.model';
 import { KegService } from './keg.service';
+import { NewKegComponent } from './new-keg/new-keg.component';
 
 @Component({
   selector: 'app-root',
@@ -31,14 +30,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  adjustInventory(servings) {
-    this.kegService.adjustInventory(servings);
+  drain(params) {
+    let keg = this.kegService.getKegById(params.key);
+    keg.update({currentAmount: params.amount});
   }
-
-  masterBevvoList: Bevvo[] = [
-    new Bevvo("10,000 Leagues", {"Seaweed Kombucha": .6, "Radler": .2, "Saltwater": .2}),
-    new Bevvo("Bone Down", {"Bone Broth": .3, "Cayenne Kombucha": .3, "Pimms": .2, "Saltwater": .2}),
-    new Bevvo("Coffin Robber", {"Cayenne Kombucha": .2, "Absinthe Stout": .7, "Arsenic": .1}),
-    new Bevvo("King Kom", {"Cayenne Kombucha": .1, "Banana Kombucha": .2, "Coconut Kombucha": .2, "Coffee Porter": .4, "Sweat": .1})
-  ];
 }

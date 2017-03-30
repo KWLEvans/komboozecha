@@ -1,11 +1,11 @@
-<div id="body" class="container-fluid">  
+<div id="body" class="container-fluid">
   <div id="main-header" class="container-fluid">
     <h1>Komboozecha</h1>
   </div>
   <div id="main-body" class="container-fluid">
-    <bevvo-list *ngIf="!adminView" [childBevvoList]="masterBevvoList" (bevvoServer)="adjustInventory($event)"></bevvo-list>
-    <keg-list *ngIf="adminView" [kegs]="kegs | async"></keg-list>
-    <button class="btn" *ngIf="!adminView" (click)="viewToggle()">View Inventory</button>
-    <button class="btn" *ngIf="adminView" (click)="viewToggle()">View Menu</button>
+    <div class="keg-div">
+      <keg-list *ngFor="let keg of kegs | async" [keg]="keg" (drainSender)="drain($event)"></keg-list>
+    </div>
   </div>
+  <new-keg id="new-keg-form" *ngIf="adminView"></new-keg>
 </div>

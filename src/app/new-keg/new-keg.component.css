@@ -1,3 +1,5 @@
-.new-keg {
-  margin-top: 80px;
+#newKeg-form {
+  display: inline-block;
+  margin-top: 50px;
+  color: brown;
 }

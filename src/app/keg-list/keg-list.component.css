@@ -1,10 +1,11 @@
-.keg-div {
-  background: rgba(255, 255, 255, 0.3);
-}
 .keg-display {
   height: 200px;
   width: 150px;
   /*background: linear-gradient( 0deg, blue, blue 90%, white 90%);*/
   border: brown 1px solid;
   border-radius: 10px;
+}
+
+.btn {
+  color: green;
 }
