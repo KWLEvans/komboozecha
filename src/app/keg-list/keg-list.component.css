@@ -1,3 +1,6 @@
+.keg-div {
+  background: rgba(255, 255, 255, 0.3);
+}
 .keg-display {
   height: 200px;
   width: 150px;

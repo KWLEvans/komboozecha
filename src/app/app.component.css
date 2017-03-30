@@ -1,0 +1,16 @@
+#body {
+  height: 100vh;
+  background-image: url("https://static.pexels.com/photos/199294/pexels-photo-199294.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: antiquewhite;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#main-header {
+  text-align: center;
+  font-family: 'Macondo', cursive;
+}
+#main-header h1 {
+  font-size: 90px;
+}

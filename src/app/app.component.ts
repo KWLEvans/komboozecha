@@ -31,13 +31,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // adjustInventory(servings) {
-  //   this.kegsList.forEach(function(keg) {
-  //     if(servings[keg.name]) {
-  //       keg.currentAmount -= servings[keg.name];
-  //     }
-  //   });
-  // }
+  adjustInventory(servings) {
+    this.kegService.adjustInventory(servings);
+  }
 
   masterBevvoList: Bevvo[] = [
     new Bevvo("10,000 Leagues", {"Seaweed Kombucha": .6, "Radler": .2, "Saltwater": .2}),
