@@ -15,6 +15,7 @@ import { FullnessPipe } from './fullness.pipe';
 export class AppComponent implements OnInit {
   kegs: Keg[];
   adminView: boolean = false;
+  desiredFullness: string = "any";
 
   constructor(private kegService: KegService) {}
 
@@ -29,7 +30,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-
   viewToggle(button) {
     if (this.adminView === false) {
       this.adminView = true;
@@ -41,5 +41,9 @@ export class AppComponent implements OnInit {
   drain(params) {
     let keg = this.kegService.getKegById(params.key);
     keg.update({currentAmount: params.amount});
+  }
+
+  setDesiredFullness(fullness) {
+    this.desiredFullness = fullness;
   }
 }

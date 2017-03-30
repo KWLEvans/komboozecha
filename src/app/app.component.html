@@ -4,8 +4,11 @@
     <h4>"Get healthy AND buzzed!"</h4>
   </div>
   <div id="main-body" class="container-fluid">
+    <button class="btn" value="any" (click)="setDesiredFullness($event.target.value)">All kegs</button>
+    <button class="btn" value="full" (click)="setDesiredFullness($event.target.value)">Untapped kegs</button>
+    <button class="btn" value="low" (click)="setDesiredFullness($event.target.value)">Low kegs</button>
     <div class="keg-div">
-      <keg-list *ngFor="let keg of kegs | fullness" [keg]="keg" (drainSender)="drain($event)"></keg-list>
+      <keg-list *ngFor="let keg of kegs | fullness: desiredFullness" [keg]="keg" (drainSender)="drain($event)"></keg-list>
     </div>
   </div>
   <new-keg id="new-keg-form" *ngIf="adminView"></new-keg>

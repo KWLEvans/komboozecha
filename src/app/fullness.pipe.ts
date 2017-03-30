@@ -6,16 +6,26 @@ import { Keg } from './models/keg.model';
 })
 export class FullnessPipe implements PipeTransform {
 
-  transform(input: Keg[]) {
+  transform(input: Keg[], desiredFullness) {
     if (input !== undefined) {
-    var output: Keg[] = [];
-    console.log(input);
-    input.forEach(keg => {
-      if(keg.currentAmount === keg.totalAmount) {
-        output.push(keg);
-      }
-    })
-    return output;
+      var output: Keg[] = [];
+      if (desiredFullness === "full") {
+        input.forEach(keg => {
+          if(keg.currentAmount === keg.totalAmount) {
+            output.push(keg);
+          }
+        });
+        return output;
+    } else if (desiredFullness === "low") {
+      input.forEach(keg => {
+        if (keg.totalAmount <= 10) {
+          output.push(keg);
+        }
+      });
+      return output;
+    } else {
+      return input;
     }
   }
+}
 }
