@@ -1,10 +1,11 @@
 <div id="body" class="container-fluid">
   <div id="main-header" class="container-fluid">
     <h1>Komboozecha</h1>
+    <h4>"Get healthy AND buzzed!"</h4>
   </div>
   <div id="main-body" class="container-fluid">
     <div class="keg-div">
-      <keg-list *ngFor="let keg of kegs | async" [keg]="keg" (drainSender)="drain($event)"></keg-list>
+      <keg-list *ngFor="let keg of kegs | fullness" [keg]="keg" (drainSender)="drain($event)"></keg-list>
     </div>
   </div>
   <new-keg id="new-keg-form" *ngIf="adminView"></new-keg>

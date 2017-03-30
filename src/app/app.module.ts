@@ -6,9 +6,9 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
-import { BevvoListComponent } from './bevvo-list/bevvo-list.component';
 import { KegListComponent } from './keg-list/keg-list.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
+import { FullnessPipe } from './fullness.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -20,9 +20,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    BevvoListComponent,
     KegListComponent,
-    NewKegComponent
+    NewKegComponent,
+    FullnessPipe
   ],
   imports: [
     BrowserModule,

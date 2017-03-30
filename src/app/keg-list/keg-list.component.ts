@@ -8,7 +8,7 @@ import { Keg } from './../models/keg.model';
   styleUrls: ['./keg-list.component.css']
 })
 export class KegListComponent implements AfterViewChecked {
-  @Input() keg;
+  @Input() keg: Keg;
   @Output() drainSender = new EventEmitter();
 
   ngAfterViewChecked() {
@@ -27,7 +27,7 @@ export class KegListComponent implements AfterViewChecked {
   drain(amount: number) {
     let quantity = this.keg.currentAmount - amount;
     let params = {
-      "key": this.keg.$key,
+      "key": this.keg.key,
       "amount": quantity
     }
     this.drainSender.emit(params);

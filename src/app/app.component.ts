@@ -3,6 +3,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Keg } from './models/keg.model';
 import { KegService } from './keg.service';
 import { NewKegComponent } from './new-keg/new-keg.component';
+import { FullnessPipe } from './fullness.pipe';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,20 @@ import { NewKegComponent } from './new-keg/new-keg.component';
 })
 
 export class AppComponent implements OnInit {
-  kegs: FirebaseListObservable<any[]>;
+  kegs: Keg[];
   adminView: boolean = false;
 
   constructor(private kegService: KegService) {}
 
   ngOnInit() {
-    this.kegs = this.kegService.getKegs();
+    this.kegService.getKegs().subscribe(kegArray => {
+      let kegList: Keg[] = [];
+      kegArray.forEach(keg => {
+        let newKeg = new Keg(keg.name, keg.currentAmount, keg.totalAmount, keg.color, keg.$key);
+        kegList.push(newKeg);
+      });
+      this.kegs = kegList;
+    });
   }
 
 
